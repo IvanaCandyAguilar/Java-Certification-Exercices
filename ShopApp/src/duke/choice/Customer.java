@@ -3,20 +3,25 @@ package duke.choice;
 public class Customer {
     private String name;
     private String size;
-    private Cloting[] items;
-    public void addItems(Cloting[] someItems){
+    private Clothing[] items;
+    public void addItems(Clothing[] someItems){
         items = someItems;
+    }
+
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
     }
 
     public double getTotalClotingCost(){
         double total =0.0;
-        for(Cloting item:items){
+        for(Clothing item:items){
                 total = total + item.getPrice();
         }
         return total;
     }
 
-    public Cloting[] getItems() {
+    public Clothing[] getItems() {
         return items;
     }
 
