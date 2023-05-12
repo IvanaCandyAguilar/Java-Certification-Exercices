@@ -1,4 +1,7 @@
 package duke.choice;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import io.helidon.webserver.Routing;
 
 public class ShopApp {
     public static void main(String[] args) {
@@ -20,11 +23,16 @@ public class ShopApp {
 
         c1.addItems(items);
 
-        System.out.println("Customer is " + c1.getName() + ", size:" + c1.getSize() + ", total:" + c1.getTotalClotingCost());
+        //System.out.println("Customer is " + c1.getName() + ", size:" + c1.getSize() + ", total:" + c1.getTotalClotingCost());
 
 
-        for (Clothing item : c1.getItems()) {
-            System.out.println("Items: " + item.getDescription());
+        //for (Clothing item : c1.getItems()) {
+        //    System.out.println("Items: " + item.getDescription());
+        //}
+
+        for (Clothing item: c1.getItems())
+        {
+            System.out.println("Item ouput:: "+item);
         }
 
         int average = 0;
@@ -43,7 +51,12 @@ public class ShopApp {
         } catch (ArithmeticException e) {
             System.out.println("Don't divided by 0");
         }
+        Arrays.sort(c1.getItems());
 
+        for (Clothing item: c1.getItems())
+        {
+            System.out.println("Item ouput:: "+item);
+        }
 
     }
 }
