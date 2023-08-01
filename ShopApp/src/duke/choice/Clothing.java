@@ -4,7 +4,7 @@ public class Clothing implements Comparable<Clothing> {
     private String description;
     private double price;
     private String size="M";
-    public final static double MIN_PRICE=10;
+    public static final  double MIN_PRICE=10;
     public final static double TAX_RATE=.2;
 
     public Clothing(String description, double price, String asize) {
